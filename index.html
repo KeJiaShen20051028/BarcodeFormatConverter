@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>專業條碼掃描器</title>
+    <title>條碼掃描與轉換</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,15 +13,16 @@
         <button class="theme-toggle" id="themeToggle">🌓</button>
 
         <header class="app-header">
-            <h1><span class="icon">📷</span> 專業條碼掃描器</h1>
+            <h1><span class="icon">📷</span> 條碼掃描與轉換</h1>
+            <p class="app-description">掃描或輸入條碼內容，生成不同格式的條碼</p>
         </header>
 
         <main class="app-main">
             <section class="scanner-section">
                 <div class="video-container">
                     <video id="video" autoplay playsinline></video>
+                    <div class="scan-overlay"></div>
                 </div>
-                <p class="scan-hint">將條碼置於鏡頭前自動掃描</p>
             </section>
 
             <section class="controls-section">
@@ -31,16 +32,17 @@
                         <option value="EAN13">EAN-13</option>
                         <option value="CODE128">Code 128</option>
                         <option value="UPC">UPC-A</option>
+                        <option value="CODE39">Code 39</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="manualInput">或手動輸入條碼</label>
+                    <label for="manualInput">手動輸入</label>
                     <input type="text" id="manualInput" class="form-control" placeholder="輸入條碼內容">
                 </div>
 
                 <button id="generateBtn" class="btn btn-primary">
-                    生成條碼
+                    <span class="btn-icon">🔄</span> 生成條碼
                 </button>
             </section>
 
@@ -50,6 +52,10 @@
                 </div>
             </section>
         </main>
+
+        <footer class="app-footer">
+            <p>© 2023 條碼工具 | 使用ZXing和JsBarcode庫</p>
+        </footer>
     </div>
 
     <script src="https://unpkg.com/@zxing/library@latest"></script>
