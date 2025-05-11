@@ -1,0 +1,225 @@
+:root {
+    --primary-color: #4a6fa5;
+    --primary-dark: #3a5a8a;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --white: #ffffff;
+    --black: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --primary-color: #5d8acd;
+    --primary-dark: #4a6fa5;
+    --light-color: #121212;
+    --dark-color: #f8f9fa;
+    --white: #1e1e1e;
+    --black: #f8f9fa;
+    --gray: #adb5bd;
+    --light-gray: #2d2d2d;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    background-color: var(--light-color);
+    color: var(--black);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.app-header .icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.app-description {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.app-main {
+    flex: 1;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: var(--dark-color);
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(74, 111, 165, 0.5);
+    pointer-events: none;
+}
+
+.controls-section {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    color: var(--black);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.25);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-icon {
+    margin-right: 0.5rem;
+}
+
+.result-section {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.5rem;
+}
+
+.barcode-container {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+
+#barcodeOutput {
+    max-width: 100%;
+    height: auto;
+}
+
+.app-footer {
+    text-align: center;
+    padding: 1rem;
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-dark);
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        padding: 1rem;
+    }
+
+    .app-header h1 {
+        font-size: 1.5rem;
+    }
+}
