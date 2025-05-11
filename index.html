@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>條碼掃描與轉換</title>
+    <title>條碼格式轉換器</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,8 +13,8 @@
         <button class="theme-toggle" id="themeToggle">🌓</button>
 
         <header class="app-header">
-            <h1><span class="icon">📷</span> 條碼掃描與轉換</h1>
-            <p class="app-description">掃描或輸入條碼內容，生成不同格式的條碼</p>
+            <h1><span class="icon">📷</span> 條碼格式轉換器</h1>
+            <p class="app-description">掃描或輸入條碼內容，調整成需要的條碼格式。</p>
         </header>
 
         <main class="app-main">
@@ -29,10 +29,21 @@
                 <div class="form-group">
                     <label for="formatSelect">條碼格式</label>
                     <select id="formatSelect" class="form-control">
-                        <option value="EAN13">EAN-13</option>
-                        <option value="CODE128">Code 128</option>
-                        <option value="UPC">UPC-A</option>
-                        <option value="CODE39">Code 39</option>
+                        <!-- 常用商業條碼 -->
+                        <option value="CODE128">Code 128 (通用格式，支援所有ASCII字符)</option>
+                        <option value="EAN13">EAN-13 (標準商品條碼，13位數字)</option>
+                        <option value="EAN8">EAN-8 (短商品條碼，8位數字)</option>
+                        <option value="UPC">UPC-A (美國商品碼，12位數字)</option>
+                        <option value="UPCE">UPC-E (壓縮UPC碼，6-8位數字)</option>
+
+                        <!-- 工業與特殊用途條碼 -->
+                        <option value="CODE39">Code 39 (工業用，支援A-Z,0-9,-.$/+%)</option>
+                        <option value="ITF14">ITF-14 (物流包裝條碼，13-14位數字)</option>
+                        <option value="MSI">MSI (庫存管理用條碼)</option>
+
+                        <!-- 專業領域條碼 -->
+                        <option value="pharmacode">Pharmacode (醫藥用條碼)</option>
+                        <option value="codabar">Codabar (圖書館/血庫用條碼)</option>
                     </select>
                 </div>
 
@@ -54,7 +65,7 @@
         </main>
 
         <footer class="app-footer">
-            <p>© 2023 條碼工具 | 使用ZXing和JsBarcode庫</p>
+            <p>Copyright© 2025 - 柯家紳KeJiaShen All rights reserved. | 使用ZXing和JsBarcode庫</p>
         </footer>
     </div>
 
